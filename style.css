@@ -92,7 +92,7 @@ button {
 }
 
 #submitButton {
-  background: #3c6cff;
+  background: #22c55e;
   color: #ffffff;
 }
 
@@ -116,6 +116,10 @@ button {
 
 .message.success {
   color: #157347;
+}
+
+.message.success.emphasis {
+  font-size: 1.3rem;
 }
 
 .message.error {

@@ -42,7 +42,7 @@ function renderQuestion() {
 function showFinalResult() {
   progressText.textContent = `문제 ${quizData.length} / ${quizData.length}`;
   hintText.textContent = "퀴즈 완료!";
-  messageText.textContent = `최종 점수: ${score} / ${quizData.length}`;
+  messageText.textContent = `최종 점수: ${score} / ${quizData.length} 🎉 멋져요, 끝까지 완주했어요!`;
   messageText.className = "message success";
 
   answerInput.disabled = true;
@@ -72,7 +72,7 @@ function handleSubmit() {
     }
 
     messageText.textContent = "정답입니다! 다음 문제로 넘어갑니다.";
-    messageText.className = "message success";
+    messageText.className = "message success emphasis";
 
     setTimeout(renderQuestion, 500);
   } else {
