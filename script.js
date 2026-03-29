@@ -18,6 +18,7 @@ const restartButton = document.getElementById("restartButton");
 
 let currentIndex = 0;
 let score = 0;
+let wrongCount = 0;
 
 // 문자열 비교를 쉽게 하기 위해 공백 제거 + 소문자 변환
 function normalizeText(text) {
@@ -34,6 +35,7 @@ function renderQuestion() {
 
   answerInput.value = "";
   answerInput.focus();
+  wrongCount = 0;
   messageText.textContent = "";
   messageText.className = "message";
 }
@@ -76,6 +78,22 @@ function handleSubmit() {
 
     setTimeout(renderQuestion, 500);
   } else {
+    wrongCount += 1;
+
+    if (wrongCount >= 2) {
+      currentIndex += 1;
+
+      if (currentIndex >= quizData.length) {
+        showFinalResult();
+        return;
+      }
+
+      messageText.textContent = `오답 2회: 정답은 \"${quizData[currentIndex - 1].answer}\" 입니다. 다음 문제로 넘어갑니다.`;
+      messageText.className = "message error";
+      setTimeout(renderQuestion, 900);
+      return;
+    }
+
     messageText.textContent = "다시 시도하세요";
     messageText.className = "message error";
   }
