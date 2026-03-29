@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>모바일 초성 퀴즈</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 앱 전체를 감싸는 카드 컨테이너 -->
+    <main class="app">
+      <section class="quiz-card" aria-live="polite">
+        <h1>초성 퀴즈</h1>
+        <p class="subtitle">힌트를 보고 정답을 입력해보세요!</p>
+
+        <div class="status-row">
+          <span id="progressText">문제 1 / 5</span>
+          <span id="scoreText">점수: 0</span>
+        </div>
+
+        <div class="hint-box">
+          <p class="label">초성 힌트</p>
+          <p id="hintText" class="hint">ㅅㅇ ㅇㅌㅍㅇ</p>
+        </div>
+
+        <label for="answerInput" class="label">정답 입력</label>
+        <input
+          id="answerInput"
+          type="text"
+          placeholder="예: 설악 워터피아"
+          autocomplete="off"
+        />
+
+        <button id="submitButton" type="button">제출</button>
+        <p id="messageText" class="message" role="status"></p>
+
+        <button id="restartButton" type="button" class="secondary" hidden>
+          다시 시작
+        </button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
