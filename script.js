@@ -81,8 +81,7 @@ function handleSubmit() {
     wrongAttempts += 1;
 
     if (wrongAttempts >= 2) {
-      const revealedAnswer = quizData[currentIndex].answer;
-      messageText.textContent = `오답 2회! 정답: ${revealedAnswer}`;
+      messageText.textContent = `오답 2회! 정답: ${quizData[currentIndex].answer}`;
       messageText.className = "message error";
 
       currentIndex += 1;
